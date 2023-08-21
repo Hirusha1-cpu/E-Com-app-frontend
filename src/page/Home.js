@@ -1,4 +1,4 @@
-import React, { useRef} from 'react'
+import React, { useRef } from 'react'
 import HomeCard from '../component/HomeCard'
 import { useSelector } from 'react-redux'
 import CardFeature from '../component/CardFeature'
@@ -10,9 +10,9 @@ import AllProduct from '../component/AllProduct'
 const Home = () => {
   const productData = useSelector((state) => state.product.productList)
   console.log("Product data home ====>", productData);
-  const homeProductCartList = productData.slice(1, 5)
+  const homeProductCartList = productData.slice(10, 15)
   const homeProductCartListVegetables = productData.filter(
-    el => el.category === 'icecream', []
+    el => el.category === 'fruits', []
   )
   console.log("vegees===>", homeProductCartListVegetables);
   const loadingArray = new Array(4).fill(null)
@@ -33,7 +33,7 @@ const Home = () => {
   console.log("Category list ===>", categoryList);
 
   return (
-    <div className='p-2 md:p-4'>
+    <div className='p-2 md:p-4' >
       <div className='md:flex gap-4' >
 
         <div className='md:w-1/2 mb-9 '>
@@ -45,7 +45,7 @@ const Home = () => {
           <p className='py-3 text-base max-w-md'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           <button className="font-bold hover:bg-white hover:text-black outline hover:outline-red-700 bg-red-500 p-2 rounded-full text-white mt-1">Order Now</button>
         </div>
-        <div className='md:w-1/2 flex flex-wrap gap-5 mb-9  justify-center p-4'>
+        <div className='md:w-1/2 flex flex-wrap gap-5 mb-9   justify-center p-4'>
           {
             homeProductCartList[0] ? homeProductCartList.map((el) => {
               return (
@@ -56,7 +56,7 @@ const Home = () => {
                   name={el.name}
                   price={el.price}
                   category={el.category}
-                  
+
 
                 />
 
@@ -73,6 +73,7 @@ const Home = () => {
               })
           }
 
+       
         </div>
 
 
@@ -104,12 +105,12 @@ const Home = () => {
                 )
               })
               :
-              loadingArrayFeature.map((el,index) => <CardFeature loading="Loading..." key={index} />)
+              loadingArrayFeature.map((el, index) => <CardFeature loading="Loading..." key={index} />)
           }
         </div>
 
       </div>
-   <AllProduct heading={"Your Product"}/>
+      <AllProduct heading={"Your Product"} />
 
     </div>
   )

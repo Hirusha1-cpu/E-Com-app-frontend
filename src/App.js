@@ -23,7 +23,9 @@ function App() {
     <Toaster/>
     <div >
      <NavBar1/>
-     <main className="pt-16 bg-slate-100 min-h-[calc(100nh)]">
+     <main className="pt-16 bg-gradient-to-r from-slate-100 to-yellow-500 min-h-[calc(100nh)]" 
+    //  style={{backgroundImage:"url('https://ajoals.com/wp-content/themes/ajoals/css/img/hp-bg1.jpg')"}} 
+     >
       <Outlet/>
      </main>
     </div>
