@@ -71,17 +71,21 @@ const NavBar1 = () => {
               }
 
             </div>
-              {/* mobile */}
             {showMenu && <div className='flex flex-col absolute right-2 bg-white py-2 shadow-sm drop-shadow-md min-w-[120px] text-center'>
               {
                 userEmail === adminEmail ? 
                 <Link to={"newproduct"} className='whitespace-nowrap px-2 cursor-pointer hover:bg-red-500'>New product</Link> : <></>
               }
+              {
+                userEmail === adminEmail ? 
+                <Link to={"orders"} className='whitespace-nowrap px-2 cursor-pointer hover:bg-red-500'>Orders</Link> : <></>
+              }
 
               {
                 userData.image ? <p onClick={handleLogout} className='cursor-pointer px-2 text-white bg-red-500'>Logout ({userData.firstName})</p> :
-                  <Link to={"login"} className='whitespace-nowrap px-2 cursor-pointer hover:bg-red-500'>Login</Link>
+                <Link to={"login"} className='whitespace-nowrap px-2 cursor-pointer hover:bg-red-500'>Login</Link>
               }
+              {/* mobile */}
               <nav className='md:gap-7 text-base md:text-lg flex flex-col md:hidden '>
                 <Link to={""} className='px-2 py-1'>Home</Link>
                 {/* <Link to={"menu/64dba414313242df9133b521"} className='px-2 py-1'>Menu</Link> */}

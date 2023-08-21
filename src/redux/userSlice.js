@@ -4,6 +4,7 @@ const initialState = {
    email:"",
    firstName:"",
    lastName:"",
+   address:"",
    _id:"",
    image:""
 }
@@ -16,6 +17,7 @@ export const userSlice = createSlice({
             console.log(action.payload.data);
             state._id = action.payload.data._id
             state.email = action.payload.data.email
+            state.address = action.payload.data.address
             state.firstName = action.payload.data.firstName
             state.lastName = action.payload.data.lastName
             state.image = action.payload.data.image
@@ -23,6 +25,7 @@ export const userSlice = createSlice({
         logoutRedux :(state,action)=>{
             state._id = ""
             state.email = ""
+            state.address   = ""
             state.firstName = ""
             state.lastName = ""
             state.image =""

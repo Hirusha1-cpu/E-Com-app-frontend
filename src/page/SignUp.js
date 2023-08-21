@@ -22,6 +22,7 @@ const SignUp = () => {
         firstName: "",
         lastName: "",
         email: "",
+        address: "",
         password: "",
         confirmPassword: "",
         image: ""
@@ -56,8 +57,8 @@ const SignUp = () => {
 
     const handleSubmit = async(e) => {
         e.preventDefault()
-        const { firstName, email, password, confirmPassword } = data
-        if (firstName && email && password && confirmPassword) {
+        const { firstName, email, password, confirmPassword, address } = data
+        if (firstName && email && password && confirmPassword && address) {
             if (password === confirmPassword) {
                 const fetchData = await fetch(`${process.env.REACT_APP_SERVER_DOMAIN}/signup`,{
                     method:"POST",
@@ -122,6 +123,10 @@ const SignUp = () => {
                     <label htmlFor='email'> Email</label>
                     <input type={'email'} id='email' name='email'
                         className='mt-1 rounded focus-within:outline-blue-300 w-full bg-slate-200 px-2 py-1' onChange={handleOnChange} value={data.email} />
+
+                    <label htmlFor='address'> Address</label>
+                    <input type={'text'} id='address' name='address'
+                        className='mt-1 rounded focus-within:outline-blue-300 w-full bg-slate-200 px-2 py-1' onChange={handleOnChange} value={data.address} />
 
                     <label htmlFor='password'>Password</label>
                     <div className='flex px-2 focus-within:outline focus-within:outline-blue-300 py-1 bg-slate-200  rounded mt-1'>
