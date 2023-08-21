@@ -60,7 +60,8 @@ const SignUp = () => {
         const { firstName, email, password, confirmPassword, address } = data
         if (firstName && email && password && confirmPassword && address) {
             if (password === confirmPassword) {
-                const fetchData = await fetch(`${process.env.REACT_APP_SERVER_DOMAIN}/signup`,{
+                const fetchData = await 
+                fetch(`${process.env.REACT_APP_SERVER_DOMAIN}/signup`,{
                     method:"POST",
                     headers:{
                         "content-type":"application/json"
